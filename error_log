@@ -1,0 +1,12 @@
+[10-Jan-2023 10:06:11 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/auxiblei/public_html/sendEmail_test.php on line 14
+[10-Jan-2023 10:06:11 UTC] PHP Warning:  require(vendor/autoload.php): failed to open stream: No such file or directory in /home/auxiblei/public_html/sendEmail_test.php on line 14
+[10-Jan-2023 10:06:11 UTC] PHP Fatal error:  require(): Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/auxiblei/public_html/sendEmail_test.php on line 14
+[14-Jan-2023 05:11:58 UTC] PHP Notice:  Undefined index: cemail in /home/auxiblei/public_html/sendEmail_test.php on line 32
+[14-Jan-2023 05:12:44 UTC] PHP Notice:  Undefined index: subject in /home/auxiblei/public_html/sendEmail_test.php on line 45
+[14-Jan-2023 05:12:44 UTC] PHP Notice:  Undefined index: message in /home/auxiblei/public_html/sendEmail_test.php on line 46
+[11-Jun-2023 17:05:09 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/auxiblei/public_html/sendEmail_test.php on line 14
+[11-Jun-2023 17:05:09 UTC] PHP Warning:  require(vendor/autoload.php): Failed to open stream: No such file or directory in /home/auxiblei/public_html/sendEmail_test.php on line 14
+[11-Jun-2023 17:05:09 UTC] PHP Fatal error:  Uncaught Error: Failed opening required 'vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php81/root/usr/share/pear') in /home/auxiblei/public_html/sendEmail_test.php:14
+Stack trace:
+#0 {main}
+  thrown in /home/auxiblei/public_html/sendEmail_test.php on line 14
