@@ -65,7 +65,7 @@ document.write(`
 
 <div class="copyrights">
   <div class="copyright-to">
-    &#169; Copyright Auxible India Pvt Ltd. All Rights Reserved | Designed by <a href="https://kusheldigi.com/" target="_blank"> kusheldigi solution </a>     
+    &#169; Copyright Auxible India Pvt Ltd. All Rights Reserved | Designed by <a href="https://kusheldigi.com/" target="_blank"> kusheldigi solutions </a>     
   </div>      
 </div>
 <!-- Footer Section ends -->
