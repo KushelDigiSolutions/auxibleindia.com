@@ -1,7 +1,7 @@
 const nodemailer = require('nodemailer');
 
 module.exports = async function handler(req, res) {
-  // Allow CORS if requested
+  // Allow CORS
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
@@ -20,13 +20,23 @@ module.exports = async function handler(req, res) {
   }
 
   try {
-    const body = req.body || {};
+    let body = req.body;
+    if (typeof body === 'string') {
+      try {
+        body = JSON.parse(body);
+      } catch (e) {
+        body = Object.fromEntries(new URLSearchParams(body));
+      }
+    }
+    body = body || {};
+
     const message = body.message || 'No message content provided';
     const subject = body.subject || 'Contact Form Enquiry';
     const cemail = body.cemail || '';
 
-    const smtpHost = process.env.SMTP_HOST || 'auxibleindia.com';
-    const smtpPort = parseInt(process.env.SMTP_PORT || '587', 10);
+    // GoDaddy Workspace / cPanel SMTP host
+    const smtpHost = process.env.SMTP_HOST || 'smtpout.secureserver.net';
+    const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
     const smtpUser = process.env.SMTP_USER || 'info@auxibleindia.com';
     const smtpPass = process.env.SMTP_PASS || 'QN!M?&bs@^mG';
 
@@ -34,6 +44,9 @@ module.exports = async function handler(req, res) {
       host: smtpHost,
       port: smtpPort,
       secure: smtpPort === 465,
+      connectionTimeout: 10000,
+      greetingTimeout: 5000,
+      socketTimeout: 10000,
       auth: {
         user: smtpUser,
         pass: smtpPass,
@@ -59,7 +72,10 @@ module.exports = async function handler(req, res) {
 
     return res.status(200).send('Message has been sent');
   } catch (error) {
-    console.error('Email send error:', error);
-    return res.status(500).send(`Message could not be sent. Mailer Error: ${error.message}`);
+    console.error('Email send error:', error.message);
+    return res.status(500).json({
+      error: true,
+      message: error.message
+    });
   }
 };

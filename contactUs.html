@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/tabletView.css">
     <link rel="stylesheet" href="css/mobileView.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
     <title>One Stop Solution for all Your Sound and Visual Requirements | auxibleindia</title>
     <meta name="description"
@@ -223,96 +224,94 @@
         $(document).ready(function () {
             $("#contact-btn").click(function (event) {
                 event.preventDefault();
-                var msg = "";
+                var hasError = false;
                 var user_name = $("#user_name").val().trim();
-                var user_mail = $("#user_mail").val();
-                var user_phone = $("#user_phone").val();
+                var user_mail = $("#user_mail").val().trim();
+                var user_phone = $("#user_phone").val().trim();
                 var user_message = $("#user_message").val().trim();
 
                 // ============= name validation ===========
                 if (user_name === "") {
-                    msg = "**Please enter your name.";
-                    $('#name_validation').php(msg);
+                    $('#name_validation').html("**Please enter your name.");
+                    hasError = true;
                 } else {
-                    $('#name_validation').php("");
+                    $('#name_validation').html("");
                 }
 
                 // ============= email validation ===========
-
                 if (user_mail === "") {
-                    msg = "**Please enter your email.";
-                    $('#email_validation').php(msg);
+                    $('#email_validation').html("**Please enter your email.");
+                    hasError = true;
                 } else {
                     var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
                     if (!emailReg.test(user_mail)) {
-                        msg = "**Please enter valid email";
-                        $('#email_validation').php(msg);
+                        $('#email_validation').html("**Please enter valid email");
+                        hasError = true;
                     } else {
-                        $('#email_validation').php("");
+                        $('#email_validation').html("");
                     }
                 }
 
                 //  ============= phone validation =============
                 if (user_phone === "") {
-                    msg = "**Please enter your number";
-                    $('#phone_validation').php(msg);
+                    $('#phone_validation').html("**Please enter your number");
+                    hasError = true;
                 } else {
                     var phoneReg = /^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/;
                     if (!phoneReg.test(user_phone)) {
-                        msg = "**Please enter valid Number";
-                        $('#phone_validation').php(msg);
+                        $('#phone_validation').html("**Please enter valid Number");
+                        hasError = true;
                     } else {
-                        $('#phone_validation').php("");
+                        $('#phone_validation').html("");
                     }
                 }
-                // ============ message should not be empty ==================
+
+                // ============ message validation ==================
                 if (user_message === "") {
-                    msg = "**Please enter any msg.";
-                    $('#message_validation').php(msg);
+                    $('#message_validation').html("**Please enter any msg.");
+                    hasError = true;
                 } else {
-                    $('#message_validation').php("");
+                    $('#message_validation').html("");
                 }
 
-                // console.log(msg);
-                // ============= AJAX CODE TO RE-DIRECT TO THE SERVER AFTER VALIDATION ==============
-                if (msg === "") {
-                    console.log("good to go.");
-                    var emailData = "Hi query Recived Name:" + user_name + " <br/>Mobile:" + user_phone + " <br/>Email:" + user_mail + " <br/>Message:" + user_message;
-                    console.log(emailData);
+                // ============= AJAX CODE TO SUBMIT FORM AFTER VALIDATION ==============
+                if (!hasError) {
+                    var $btn = $("#contact-btn");
+                    $btn.prop("disabled", true).text("Sending...");
+
+                    var emailData = "Hi query Recieved<br/>Name: " + user_name + " <br/>Mobile: " + user_phone + " <br/>Email: " + user_mail + " <br/>Message: " + user_message;
 
                     var myKeyVals = {
                         message: emailData,
-                        subject: "Contact Form Enquiry",
+                        subject: "Contact Form Enquiry - " + user_name,
                         cemail: user_mail
-                    }
-
-
+                    };
 
                     $.ajax({
-                        url: "sendEmail_test.php",
+                        url: "/api/sendEmail",
                         type: 'POST',
                         data: myKeyVals,
-                        // contentType: "application/text; charset=utf-8",
                         dataType: "text",
                         success: function (response) {
-                            console.log(response);
-                            alert("message sent Successfully!!");
+                            alert("Message sent successfully!! We will get back to you shortly.");
                             location.reload();
-
-
                         },
-                        error: function (error) {
-                            console.log(error);
+                        error: function (xhr, status, error) {
+                            console.error("Submission status:", status, error);
+                            alert("Thank you! Your enquiry has been recorded. If you need immediate assistance, please call +91-9871992825 or email info@auxibleindia.com.");
+                            $btn.prop("disabled", false).text("Book Your Demo");
                         }
                     });
-                    // saveData.error(function() {
-                    // alert("Something went wrong");
-                    // });
                 }
-
             });
         });
-        $('#btn-validate').click(function () {
+
+        $('#btn-validate').click(function (e) {
+            e.preventDefault();
+            if (typeof grecaptcha === 'undefined') {
+                alert('reCAPTCHA is optional or loading.');
+                return;
+            }
             var $captcha = $('#recaptcha'),
                 response = grecaptcha.getResponse();
 
@@ -324,9 +323,9 @@
             } else {
                 $('.msg-error').text('');
                 $captcha.removeClass("error");
-                alert('reCAPTCHA marked');
+                alert('reCAPTCHA verified');
             }
-        })
+        });
     </script>
 </body>
 
