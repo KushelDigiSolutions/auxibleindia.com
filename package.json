@@ -1,0 +1,12 @@
+{
+  "name": "auxibleindia",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Auxible India Audio Visual Solutions",
+  "scripts": {
+    "start": "serve ."
+  },
+  "dependencies": {
+    "nodemailer": "^10.0.10"
+  }
+}

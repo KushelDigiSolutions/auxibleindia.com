@@ -2,7 +2,7 @@ document.write(`
 <!-- Footer Section starts -->
 <div class="footer">
     <div class="footer-section1">
-        <a href="index.php" >
+        <a href="index.html" >
         <img src="images/auxilogo.png" alt="">
         </a>
         <div class="footer_content">
@@ -25,13 +25,13 @@ document.write(`
         <div class="information">
             <h3>Information</h3>
             <ul>
-                <li><a href="index.php">Home</a></li>
-                <li><a href="company.php">Company</a></li>
-                <li><a href="solution.php">Solutions</a></li>
-                <li><a href="brand.php">Brands</a></li>
-                <li><a href="sector.php">Enviornments</a></li>
-                <li><a href="resources.php">Resources</a></li>
-                <li><a href="policy.php">Privacy Policy</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="company.html">Company</a></li>
+                <li><a href="solution.html">Solutions</a></li>
+                <li><a href="brand.html">Brands</a></li>
+                <li><a href="sector.html">Enviornments</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="policy.html">Privacy Policy</a></li>
                 
             </ul>
         </div>
