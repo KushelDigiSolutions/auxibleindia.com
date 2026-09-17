@@ -69,49 +69,48 @@ document.write(`
   </div>      
 </div>
 <!-- Footer Section ends -->
+`);
 
-<script src="js/script.js"></script>
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+(function() {
+  function injectScript(src, onload) {
+    var s = document.createElement('script');
+    s.src = src;
+    s.async = false;
+    if (onload) s.onload = onload;
+    document.head.appendChild(s);
+  }
 
-
-<!-- Initialize Swiper -->
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 4,
-    slidesPerGroup: 4,
-    // loop: true,
-    // loopFillGroupWithBlank: true,
-    // autoplay: {
-    //     delay: 2500,
-    //     disableOnInteraction: false,
-    //   },
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".project-next-btn",
-      prevEl: ".project-prev-btn",
-    },
-    breakpoints: {
-      300: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-      },
-      768: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-      },
-      1024: {
+  function initSwiper() {
+    if (typeof Swiper !== 'undefined' && document.querySelector(".mySwiper")) {
+      new Swiper(".mySwiper", {
         slidesPerView: 4,
         slidesPerGroup: 4,
-      },
-    },
-  });
-</script>
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".project-next-btn",
+          prevEl: ".project-prev-btn",
+        },
+        breakpoints: {
+          300: { slidesPerView: 1, slidesPerGroup: 1 },
+          768: { slidesPerView: 2, slidesPerGroup: 2 },
+          1024: { slidesPerView: 4, slidesPerGroup: 4 },
+        },
+      });
+    }
+  }
 
-</body>
-</html>
-`);
+  if (!window.jQuery) {
+    injectScript("https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js");
+  }
+
+  if (!window.Swiper) {
+    injectScript("https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js", initSwiper);
+  } else {
+    initSwiper();
+  }
+
+  injectScript("js/script.js");
+})();

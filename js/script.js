@@ -1,4 +1,4 @@
-
+﻿
    const activePage = window.location.pathname;
 
    const navLinks = document.querySelectorAll('nav a').forEach(link => {
@@ -26,7 +26,7 @@
    let publicator_subsector = document.getElementById("publicator-subsector");
    let retail_subsector = document.getElementById("retail-subsector");
 
-   entertainment_link.addEventListener("click",(e)=>{
+   entertainment_link?.addEventListener("click",(e)=>{
       entertainment_subsector.style.display="flex";
       corporate_subsector.style.display="none"
       education_subsector.style.display="none";
@@ -44,7 +44,7 @@
       retail_link.classList.remove("key-sector-active-list");
     })
 
-    corporate_link.addEventListener("click",(e)=>{
+    corporate_link?.addEventListener("click",(e)=>{
       entertainment_subsector.style.display="none";
       corporate_subsector.style.display="flex"
       education_subsector.style.display="none";
@@ -62,7 +62,7 @@
       retail_link.classList.remove("key-sector-active-list");
     })
 
-    education_link.addEventListener("click",(e)=>{
+    education_link?.addEventListener("click",(e)=>{
       entertainment_subsector.style.display="none";
       corporate_subsector.style.display="none"
       education_subsector.style.display="flex";
@@ -80,7 +80,7 @@
       retail_link.classList.remove("key-sector-active-list");
     })
 
-    hospitality_link.addEventListener("click",(e)=>{
+    hospitality_link?.addEventListener("click",(e)=>{
       entertainment_subsector.style.display="none";
       corporate_subsector.style.display="none"
       education_subsector.style.display="none";
@@ -98,7 +98,7 @@
       retail_link.classList.remove("key-sector-active-list");
     })
 
-    leisure_link.addEventListener("click",(e)=>{
+    leisure_link?.addEventListener("click",(e)=>{
       entertainment_subsector.style.display="none";
       corporate_subsector.style.display="none"
       education_subsector.style.display="none";
@@ -116,7 +116,7 @@
       retail_link.classList.remove("key-sector-active-list");
     })
 
-    publicator_link.addEventListener("click",(e)=>{
+    publicator_link?.addEventListener("click",(e)=>{
       entertainment_subsector.style.display="none";
       corporate_subsector.style.display="none"
       education_subsector.style.display="none";
@@ -134,7 +134,7 @@
       retail_link.classList.remove("key-sector-active-list");
     })
 
-    retail_link.addEventListener("click",(e)=>{
+    retail_link?.addEventListener("click",(e)=>{
       entertainment_subsector.style.display="none";
       corporate_subsector.style.display="none"
       education_subsector.style.display="none";
@@ -243,7 +243,7 @@
 
 
 
-    // lod_bhopal.addEventListener("click",(e)=>{
+    // lod_bhopal?.addEventListener("click",(e)=>{
     //   diablo_details.style.display="none";
     //   miso_sexy_details.style.display="none";
      
@@ -264,7 +264,7 @@
     //   lodbhopal.style.display="flex";
     // })
 
-    diablo.addEventListener("click",(e)=>{
+    diablo?.addEventListener("click",(e)=>{
       diablo_details.style.display="flex";
       miso_sexy_details.style.display="none";
      
@@ -317,7 +317,7 @@
 
     })
 
-    miso_sexy.addEventListener("click",(e)=>{
+    miso_sexy?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="flex";
     
@@ -366,7 +366,7 @@
 
  
 
-    imperfecto.addEventListener("click",(e)=>{
+    imperfecto?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
     
@@ -412,7 +412,7 @@
  
     })
 
-    aviary.addEventListener("click",(e)=>{
+    aviary?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
     
@@ -458,7 +458,7 @@
  
     })
 
-    bougie.addEventListener("click",(e)=>{
+    bougie?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
      
@@ -504,7 +504,7 @@
  
     })
 
-    bent_chair.addEventListener("click",(e)=>{
+    bent_chair?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
     
@@ -550,7 +550,7 @@
  
     })
 
-    bar_headquators.addEventListener("click",(e)=>{
+    bar_headquators?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
     
@@ -596,7 +596,7 @@
  
     })
 
-    molecule_bhopal.addEventListener("click",(e)=>{
+    molecule_bhopal?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
     
@@ -642,7 +642,7 @@
 
     })
 
-    romeo_lane.addEventListener("click",(e)=>{
+    romeo_lane?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
    
@@ -688,7 +688,7 @@
  
     })
 
-    knot.addEventListener("click",(e)=>{
+    knot?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
      
@@ -736,7 +736,7 @@
     
     })
 
-    roadies.addEventListener("click",(e)=>{
+    roadies?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
    
@@ -785,7 +785,7 @@
 
 
 
-    lod_goa.addEventListener("click",(e)=>{
+    lod_goa?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
    
@@ -832,7 +832,7 @@
 
     })
 
-    lod_agra.addEventListener("click",(e)=>{
+    lod_agra?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
     
@@ -879,7 +879,7 @@
 
     })
 
-    bb_club.addEventListener("click",(e)=>{
+    bb_club?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
     
@@ -926,7 +926,7 @@
 
     })
 
-    Mystic.addEventListener("click",(e)=>{
+    Mystic?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
    
@@ -976,7 +976,7 @@
 
 
     // new
-    dart_canday.addEventListener("click",(e)=>{
+    dart_canday?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
    
@@ -1023,7 +1023,7 @@
  
  
     })
-    my_fair.addEventListener("click",(e)=>{
+    my_fair?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
    
@@ -1070,7 +1070,7 @@
 
 
     })
-    mic_drop.addEventListener("click",(e)=>{
+    mic_drop?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
    
@@ -1117,7 +1117,7 @@
 
         })
 
-        diablo_dehra.addEventListener("click",(e)=>{
+        diablo_dehra?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1163,7 +1163,7 @@
 
         })
 
-        Romeo_Lane2.addEventListener("click",(e)=>{
+        Romeo_Lane2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1209,7 +1209,7 @@
 
         })
 
-        Universal_Club2.addEventListener("click",(e)=>{
+        Universal_Club2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1256,7 +1256,7 @@
 
         })
 
-        My_Bar_HQ2.addEventListener("click",(e)=>{
+        My_Bar_HQ2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1306,7 +1306,7 @@
 
         // start
 
-        MOB2.addEventListener("click",(e)=>{
+        MOB2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1353,7 +1353,7 @@
         })
 
 
-        Rion2.addEventListener("click",(e)=>{
+        Rion2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1400,7 +1400,7 @@
         })
 
 
-        FTV2.addEventListener("click",(e)=>{
+        FTV2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1447,7 +1447,7 @@
         })
 
 
-      Kings_Cafe2.addEventListener("click",(e)=>{
+      Kings_Cafe2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1494,7 +1494,7 @@
         })
 
 
-        The_White2.addEventListener("click",(e)=>{
+        The_White2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1541,7 +1541,7 @@
         })
 
 
-        HQ_Isolate2.addEventListener("click",(e)=>{
+        HQ_Isolate2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1588,7 +1588,7 @@
         })
 
 
-        Salt_Cafe2.addEventListener("click",(e)=>{
+        Salt_Cafe2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1634,7 +1634,7 @@
         })
 
 
-        Toy_Box2.addEventListener("click",(e)=>{
+        Toy_Box2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1681,7 +1681,7 @@
         })
 
 
-        Hotel_Vinflora2.addEventListener("click",(e)=>{
+        Hotel_Vinflora2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1728,7 +1728,7 @@
         })
 
 
-        LOD2.addEventListener("click",(e)=>{
+        LOD2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1775,7 +1775,7 @@
         })
 
 
-        Momentz_Club2.addEventListener("click",(e)=>{
+        Momentz_Club2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1822,7 +1822,7 @@
         })
 
 
-        Impulse2.addEventListener("click",(e)=>{
+        Impulse2?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1869,7 +1869,7 @@
         })
 
 
-        LOD3.addEventListener("click",(e)=>{
+        LOD3?.addEventListener("click",(e)=>{
       diablo_details.style.display="none";
       miso_sexy_details.style.display="none";
       imperfecto_details.style.display="none";
@@ -1925,7 +1925,7 @@
 
     // end
 
-    // universal_club.addEventListener("click",(e)=>{
+    // universal_club?.addEventListener("click",(e)=>{
     //   diablo_details.style.display="none";
     //   miso_sexy_details.style.display="none";
    
